@@ -1,0 +1,56 @@
+README for ruby-webp
+=====================
+
+Ruby-webp is a gem providing a ruby interface to Google WebP Codec.
+
+To install, type 'gem install ruby-webp'
+
+Usage:
+
+  require 'rubygems'
+  require 'ruby-webp'
+
+  # Encoder Example 1
+
+  cwebp = RubyWebP::Encoder.new
+  
+  cwebp.compression_factor = 70
+  cwebp.input_file = "picture.png"
+  cwebp.output_file = "picture.webp"
+  cwebp.show_config
+ => "cwebp -q 70 picture.png -o picture.webp"
+  cwebp.encode
+
+  # Encoder Example 2
+  
+  cwebp = RubyWebP::Encoder.new
+ 
+  cwebp.spatial_noise_shaping = 70
+  cwebp.deblocking_filter = 50
+  cwebp.strong_filtering = true
+  cwebp.auto_filter = true
+  cwebp.target_size = 60000
+  cwebp.input_file = "picture.png"
+  cwebp.output_file = "picture.webp"
+  cwebp.show_config
+ => "cwebp -sns 70 -f 50 -strong -af -size 60000 picture.png -o picture.webp"
+  cwebp.encode
+
+  # Decoder Example 1
+
+  dwebp = RubyWebP::Decoder.new
+  dwebp.input_file = "picture.webp"
+  dwebp.ouput_file = "output.png"
+  dwebp.show_config
+ => "dwebp picture.webp -o output.png"
+  dwebp.decode
+  
+  # Decoder Example 2
+  
+  dwebp = RubyWebP::Decoder.new
+  dwebp.input_file = "picture.webp"
+  dwebp.output_ppm = true
+  dwebp.output_file = "output.ppm"
+  dwebp.show_config
+ => "dwebp picture.webp -ppm -o output.ppm"
+  dwebp.decode
