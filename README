@@ -12,7 +12,7 @@ Usage:
 
   # Encoder Example 1
 
-  cwebp = RubyWebP::Encoder.new
+  cwebp = WebP::Encoder.new
   
   cwebp.compression_factor = 70
   cwebp.input_file = "picture.png"
@@ -23,7 +23,7 @@ Usage:
 
   # Encoder Example 2
   
-  cwebp = RubyWebP::Encoder.new
+  cwebp = WebP::Encoder.new
  
   cwebp.spatial_noise_shaping = 70
   cwebp.deblocking_filter = 50
@@ -38,7 +38,7 @@ Usage:
 
   # Decoder Example 1
 
-  dwebp = RubyWebP::Decoder.new
+  dwebp = WebP::Decoder.new
   dwebp.input_file = "picture.webp"
   dwebp.ouput_file = "output.png"
   dwebp.show_config
@@ -47,7 +47,7 @@ Usage:
   
   # Decoder Example 2
   
-  dwebp = RubyWebP::Decoder.new
+  dwebp = WebP::Decoder.new
   dwebp.input_file = "picture.webp"
   dwebp.output_ppm = true
   dwebp.output_file = "output.ppm"
