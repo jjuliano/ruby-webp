@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Ruby-webp by jjuliano</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ruby-webp</h1>
+        <h2>A gem providing a ruby interface to Google WebP Codec.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/jjuliano/ruby-webp/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/jjuliano/ruby-webp/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/jjuliano/ruby-webp" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>README for ruby-webp</h1>
+
+<p>Ruby-webp is a gem providing a ruby interface to Google WebP Codec.</p>
+
+<p>To install, type 'gem install ruby-webp'</p>
+
+<p>Usage:</p>
+
+<p>require 'rubygems'
+  require 'ruby-webp'</p>
+
+<p># Encoder Example 1</p>
+
+<p>cwebp = WebP::Encoder.new</p>
+
+<p>cwebp.compression_factor = 70
+  cwebp.input_file = "picture.png"
+  cwebp.output_file = "picture.webp"
+  cwebp.show_config
+ =&gt; "cwebp -q 70 picture.png -o picture.webp"
+  cwebp.encode</p>
+
+<p># Encoder Example 2</p>
+
+<p>cwebp = WebP::Encoder.new</p>
+
+<p>cwebp.spatial_noise_shaping = 70
+  cwebp.deblocking_filter = 50
+  cwebp.strong_filtering = true
+  cwebp.auto_filter = true
+  cwebp.target_size = 60000
+  cwebp.input_file = "picture.png"
+  cwebp.output_file = "picture.webp"
+  cwebp.show_config
+ =&gt; "cwebp -sns 70 -f 50 -strong -af -size 60000 picture.png -o picture.webp"
+  cwebp.encode</p>
+
+<p># Decoder Example 1</p>
+
+<p>dwebp = WebP::Decoder.new
+  dwebp.input_file = "picture.webp"
+  dwebp.ouput_file = "output.png"
+  dwebp.show_config
+ =&gt; "dwebp picture.webp -o output.png"
+  dwebp.decode</p>
+
+<p># Decoder Example 2</p>
+
+<p>dwebp = WebP::Decoder.new
+  dwebp.input_file = "picture.webp"
+  dwebp.output_ppm = true
+  dwebp.output_file = "output.ppm"
+  dwebp.show_config
+ =&gt; "dwebp picture.webp -ppm -o output.ppm"
+  dwebp.decode</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
